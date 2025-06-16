@@ -1,0 +1,26 @@
+# Entorno virtual
+venv/
+ENV/
+env/
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de Jupyter
+.ipynb_checkpoints/
+
+# Modelos pesados (opcional, si no deseas subirlos)
+*.h5
+
+# Archivos temporales o personales
+*.log
+*.swp
+
+# VSCode config (si no quieres compartirla)
+.vscode/
