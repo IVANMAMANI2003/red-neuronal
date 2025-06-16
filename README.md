@@ -1,3 +1,3 @@
 # DOCUMENTACION
 
-Hola, cada carpeta tien su propio README.md
+Hola, cada carpeta tiene su propio README.md
