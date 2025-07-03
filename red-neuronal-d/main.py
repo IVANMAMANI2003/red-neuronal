@@ -20,5 +20,23 @@ model.fit(X_train, y_train, epochs=50, validation_split=0.2)
 loss, acc = model.evaluate(X_test, y_test)
 print(f"Precisión: {acc*100:.2f}%")
 
+# Matriz de confusión
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Predecir clases para el conjunto de prueba
+preds = model.predict(X_test)
+y_pred = np.argmax(preds, axis=1)
+y_true = np.argmax(y_test, axis=1)
+
+cm = confusion_matrix(y_true, y_pred)
+print("\nMatriz de Confusión (consola):")
+print(cm)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Continúa", "Abandona", "Se gradúa"])
+disp.plot(cmap=plt.cm.Blues)
+plt.title("Matriz de Confusión")
+plt.show()
+
 # Guardar modelo
 model.save('models/dropout_model.h5')
